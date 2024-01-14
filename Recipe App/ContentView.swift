@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresented = false
+    
+    
     var body: some View {
         VStack(alignment: .center) {
             Image("foods")
@@ -32,18 +35,14 @@ struct ContentView: View {
                 
             }, label: {
                 Text("Get Started")
-                    .font(.subheadline)
-                    .frame(height: 48)
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .background(Color(.green))
-                    .cornerRadius(24)
-                    .padding(.horizontal, 24)
+                    .modifier(RoundedColorButton(color: Color(.green)))
             })
             //.padding(.top, 40)
             
             Spacer()
+                .sheet(isPresented: $isPresented, content: {
+                    WelcomeBackView()
+                })
         }
     }
 }
