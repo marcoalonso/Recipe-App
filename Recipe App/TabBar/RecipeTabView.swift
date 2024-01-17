@@ -3,7 +3,8 @@
 //  Recipe App
 //
 //  Created by Marco Alonso Rodriguez on 17/01/24.
-//
+// Figma
+// https://www.figma.com/file/KQe1KVeCZEvrahlpl52hFK/Recipeo---Recipe-App-UI-(Community)?type=design&node-id=156-0&mode=design&t=jhi9xsv9gdAqUUpS-0
 
 import SwiftUI
 
