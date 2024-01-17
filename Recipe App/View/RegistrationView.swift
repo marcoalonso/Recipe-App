@@ -148,9 +148,6 @@ struct RegistrationView: View {
                     .font(.footnote)
                 }
             }
-            
-            Spacer()
-            
         }
         .padding(.vertical, 50)
     }

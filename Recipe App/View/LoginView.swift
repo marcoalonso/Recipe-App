@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var isPresented = false
     
     var body: some View {
         NavigationStack {
@@ -77,7 +78,7 @@ struct LoginView: View {
                 // Login Buttons
                 VStack(spacing: 16.0) {
                     Button(action: {
-                        
+                        isPresented = true
                     }, label: {
                         Text("Login")
                             .modifier(RoundedColorButton(color: Color(.green)))
@@ -110,7 +111,9 @@ struct LoginView: View {
 
                 }
                 
-                
+                .fullScreenCover(isPresented: $isPresented, content: {
+                    RecipeTabView()
+                })
             }
         }
     }
