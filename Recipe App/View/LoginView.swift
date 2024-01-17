@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeBackView: View {
+struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
@@ -75,7 +75,7 @@ struct WelcomeBackView: View {
                 }
                 
                 // Login Buttons
-                VStack {
+                VStack(spacing: 16.0) {
                     Button(action: {
                         
                     }, label: {
@@ -92,12 +92,30 @@ struct WelcomeBackView: View {
                         Text("Google")
                             .modifier(RoundedColorButton(color: Color(.orange)))
                     })
+                    
+                    NavigationLink {
+                        RegistrationView()
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        HStack(spacing: 3) {
+                            Text("Don't have an account?")
+                            
+                            Text("Sign Up")
+                                .foregroundColor(.green)
+                                .fontWeight(.semibold)
+                        }
+                        .foregroundColor(.black)
+                        .font(.footnote)
+                    }
+
                 }
+                
+                
             }
         }
     }
 }
 
 #Preview {
-    WelcomeBackView()
+    LoginView()
 }

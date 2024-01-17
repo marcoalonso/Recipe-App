@@ -32,7 +32,7 @@ struct ContentView: View {
             Spacer()
             
             Button(action: {
-                
+                isPresented = true
             }, label: {
                 Text("Get Started")
                     .modifier(RoundedColorButton(color: Color(.green)))
@@ -40,8 +40,8 @@ struct ContentView: View {
             //.padding(.top, 40)
             
             Spacer()
-                .sheet(isPresented: $isPresented, content: {
-                    WelcomeBackView()
+                .fullScreenCover(isPresented: $isPresented, content: {
+                    LoginView()
                 })
         }
     }
