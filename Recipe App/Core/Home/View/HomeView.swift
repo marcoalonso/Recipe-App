@@ -64,14 +64,9 @@ struct HomeView: View {
                     // Grid Posts
                     ScrollView {
                         LazyVGrid(columns: gridItemLayout) {
-                            ForEach(data, id: \.self) { item in
-                                Text(item)
-                                    .frame(maxWidth: .infinity, maxHeight: 250)
-                                    .frame(height: 250)
-                                    .background(Color.gray)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
-                                    .padding()
+                            ForEach(MockData.recipes, id: \.dishName) { item in
+                                RecipeCellView(recipe: item)
+                                    
                             }
                         }
                         .padding()

@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var isPresented = false
+    @State private var isShowingPassword = false
     
     var body: some View {
         NavigationStack {
@@ -25,20 +26,15 @@ struct LoginView: View {
                 
                 VStack(spacing: 20.0) {
                     HStack {
-                        Image(systemName: "lock")
+                        Image(systemName: "envelope")
                             .fontWeight(.semibold)
+                            .foregroundColor(.gray)
                         
                         TextField("Email or phone number", text: $email)
                             .font(.subheadline)
                             .padding(12)
                             .cornerRadius(12)
                         
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "eye")
-                                .foregroundColor(.gray)
-                        })
                     }
                     .modifier(TextViewModifier())
                         
@@ -46,15 +42,24 @@ struct LoginView: View {
                     HStack {
                         Image(systemName: "lock")
                             .fontWeight(.semibold)
+                            .foregroundColor(.gray)
                         
-                        TextField("Password", text: $password)
-                            .font(.subheadline)
-                            .padding(12)
-                            .cornerRadius(12)
+                        if isShowingPassword {
+                            TextField("Password", text: $password)
+                                .font(.subheadline)
+                                .padding(12)
+                                .cornerRadius(12)
+                        } else {
+                            SecureField("Password", text: $password)
+                                .font(.subheadline)
+                                .padding(12)
+                                .cornerRadius(12)
+                        }
+                        
                             
                         
                         Button(action: {
-                            
+                            isShowingPassword.toggle()
                         }, label: {
                             Image(systemName: "eye")
                                 .foregroundColor(.gray)
