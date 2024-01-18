@@ -27,6 +27,7 @@ struct RegistrationView: View {
     var isPasswordWithLowercase: Bool {
           return password.contains(where: { $0.isLowercase })
       }
+    
     var isPasswordValid: Bool {
            return isPasswordValidLength &&
                   isPasswordWithNumber &&
