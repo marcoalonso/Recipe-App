@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var fullname = ""
-    @State private var username = ""
+    @StateObject var viewModel = RegistrationViewModel()
+    @State private var isShowingPassword = false
     
     @Environment(\.dismiss) private var dismiss
     
     var isPasswordValidLength: Bool {
-          return password.count >= 6
+        return viewModel.password.count >= 6
       }
     var isPasswordWithNumber: Bool {
-          return password.contains(where: { $0.isNumber })
+        return viewModel.password.contains(where: { $0.isNumber })
       }
     var isPasswordWithUppercase: Bool {
-          return password.contains(where: { $0.isUppercase })
+        return viewModel.password.contains(where: { $0.isUppercase })
       }
     var isPasswordWithLowercase: Bool {
-          return password.contains(where: { $0.isLowercase })
+        return viewModel.password.contains(where: { $0.isLowercase })
       }
     
     var isPasswordValid: Bool {
@@ -51,7 +49,7 @@ struct RegistrationView: View {
                     Image(systemName: "lock")
                         .fontWeight(.semibold)
                     
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $viewModel.email)
                         .font(.subheadline)
                         .padding(12)
                         .cornerRadius(12)
@@ -70,16 +68,23 @@ struct RegistrationView: View {
                     Image(systemName: "lock")
                         .fontWeight(.semibold)
                     
-                    TextField("Password", text: $password)
-                        .font(.subheadline)
-                        .padding(12)
-                        .cornerRadius(12)
+                    if isShowingPassword {
+                        TextField("Password", text: $viewModel.password)
+                            .font(.subheadline)
+                            .padding(12)
+                            .cornerRadius(12)
+                    } else {
+                        SecureField("Password", text: $viewModel.password)
+                            .font(.subheadline)
+                            .padding(12)
+                            .cornerRadius(12)
+                    }
                         
                     
                     Button(action: {
-                        
+                        isShowingPassword.toggle()
                     }, label: {
-                        Image(systemName: "eye")
+                        Image(systemName: isShowingPassword ? "eye" : "eye.slash")
                             .foregroundColor(.gray)
                     })
                 }
@@ -127,7 +132,7 @@ struct RegistrationView: View {
                 .font(.footnote)
                 
                 Button(action: {
-                    
+                    Task { try await viewModel.createUser() }
                 }, label: {
                     Text("Sign Up")
                         .modifier(RoundedColorButton(color: Color(.green)))

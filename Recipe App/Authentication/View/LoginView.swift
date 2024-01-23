@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @StateObject var viewModel = LoginViewModel()
+    
     @State private var isPresented = false
     @State private var isShowingPassword = false
     
@@ -30,7 +30,7 @@ struct LoginView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.gray)
                         
-                        TextField("Email or phone number", text: $email)
+                        TextField("Email or phone number", text: $viewModel.email)
                             .font(.subheadline)
                             .padding(12)
                             .cornerRadius(12)
@@ -45,12 +45,12 @@ struct LoginView: View {
                             .foregroundColor(.gray)
                         
                         if isShowingPassword {
-                            TextField("Password", text: $password)
+                            TextField("Password", text: $viewModel.password)
                                 .font(.subheadline)
                                 .padding(12)
                                 .cornerRadius(12)
                         } else {
-                            SecureField("Password", text: $password)
+                            SecureField("Password", text: $viewModel.password)
                                 .font(.subheadline)
                                 .padding(12)
                                 .cornerRadius(12)
