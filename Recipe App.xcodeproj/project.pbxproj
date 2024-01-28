@@ -37,6 +37,10 @@
 		6C1EAA7E2B59CB74004ACAF0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6C1EAA7D2B59CB74004ACAF0 /* FirebaseStorageCombine-Community */; };
 		6C1EAA822B59CF7D004ACAF0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EAA812B59CF7D004ACAF0 /* RegistrationViewModel.swift */; };
 		6C1EAA852B59D025004ACAF0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EAA842B59D025004ACAF0 /* AuthService.swift */; };
+		6C729C272B66AE77006D1899 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C729C262B66AE77006D1899 /* UploadView.swift */; };
+		6C729C292B6703B0006D1899 /* UploadView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C729C282B6703B0006D1899 /* UploadView2.swift */; };
+		6C729C2B2B670BF2006D1899 /* RecipeImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C729C2A2B670BF2006D1899 /* RecipeImagePicker.swift */; };
+		6C729C472B6719D3006D1899 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C729C462B6719D3006D1899 /* ModalView.swift */; };
 		6C83516E2B5464110008EED9 /* Recipe_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83516D2B5464110008EED9 /* Recipe_AppApp.swift */; };
 		6C8351702B5464110008EED9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83516F2B5464110008EED9 /* ContentView.swift */; };
 		6C8351722B5464140008EED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8351712B5464140008EED9 /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		6C1EAA462B59CB3E004ACAF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C1EAA812B59CF7D004ACAF0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		6C1EAA842B59D025004ACAF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		6C729C262B66AE77006D1899 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		6C729C282B6703B0006D1899 /* UploadView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView2.swift; sourceTree = "<group>"; };
+		6C729C2A2B670BF2006D1899 /* RecipeImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImagePicker.swift; sourceTree = "<group>"; };
+		6C729C462B6719D3006D1899 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		6C83516A2B5464110008EED9 /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C83516D2B5464110008EED9 /* Recipe_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_AppApp.swift; sourceTree = "<group>"; };
 		6C83516F2B5464110008EED9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +153,17 @@
 				6C1EAA842B59D025004ACAF0 /* AuthService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		6C729C252B66AE5C006D1899 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				6C729C262B66AE77006D1899 /* UploadView.swift */,
+				6C729C282B6703B0006D1899 /* UploadView2.swift */,
+				6C729C2A2B670BF2006D1899 /* RecipeImagePicker.swift */,
+				6C729C462B6719D3006D1899 /* ModalView.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		6C8351612B5464110008EED9 = {
@@ -242,6 +261,7 @@
 		6CBDD4872B585ABA002AAE0F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				6C729C252B66AE5C006D1899 /* Upload */,
 				6C90EED82B602D5D00CC990C /* Profile */,
 				6C90EED52B6029C300CC990C /* Root */,
 				6CBDD4882B585AC3002AAE0F /* Home */,
@@ -371,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C729C472B6719D3006D1899 /* ModalView.swift in Sources */,
 				6CBDD48A2B585AE8002AAE0F /* HomeView.swift in Sources */,
 				6CBDD4912B5862C4002AAE0F /* MockData.swift in Sources */,
 				6CBDD48F2B58620A002AAE0F /* RecipeModel.swift in Sources */,
@@ -381,6 +402,7 @@
 				6CBDD4812B584B29002AAE0F /* RegistrationView.swift in Sources */,
 				6C90EEDF2B6035FC00CC990C /* LoginViewModel.swift in Sources */,
 				6C83517E2B5466E10008EED9 /* TextViewModifier.swift in Sources */,
+				6C729C292B6703B0006D1899 /* UploadView2.swift in Sources */,
 				6C90EEDA2B602D6800CC990C /* ProfileView.swift in Sources */,
 				6CBDD48D2B5861FA002AAE0F /* RecipeCellView.swift in Sources */,
 				6C1EAA822B59CF7D004ACAF0 /* RegistrationViewModel.swift in Sources */,
@@ -388,7 +410,9 @@
 				6C83516E2B5464110008EED9 /* Recipe_AppApp.swift in Sources */,
 				6CBDD4842B5855EE002AAE0F /* RecipeTabView.swift in Sources */,
 				6C1EAA852B59D025004ACAF0 /* AuthService.swift in Sources */,
+				6C729C272B66AE77006D1899 /* UploadView.swift in Sources */,
 				6C90EED72B6029E000CC990C /* ContentViewModel.swift in Sources */,
+				6C729C2B2B670BF2006D1899 /* RecipeImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +549,7 @@
 				DEVELOPMENT_TEAM = 345UR7Z9A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "We need access to your library to upload recipe photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -554,6 +579,7 @@
 				DEVELOPMENT_TEAM = 345UR7Z9A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "We need access to your library to upload recipe photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

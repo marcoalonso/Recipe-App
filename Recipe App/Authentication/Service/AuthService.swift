@@ -25,7 +25,7 @@ class AuthService {
             self.userSession = result.user
             print("User logged! \(result.user)")
         } catch {
-            print("Error creating user ... \(error.localizedDescription)")
+            print("Error loggin the user ... \(error.localizedDescription)")
         }
     }
     

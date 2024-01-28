@@ -34,6 +34,7 @@ struct LoginView: View {
                             .font(.subheadline)
                             .padding(12)
                             .cornerRadius(12)
+                            .autocapitalization(.none)
                         
                     }
                     .modifier(TextViewModifier())
@@ -83,7 +84,9 @@ struct LoginView: View {
                 // Login Buttons
                 VStack(spacing: 16.0) {
                     Button(action: {
-                        isPresented = true
+                        Task {
+                            try await viewModel.login()
+                        }
                     }, label: {
                         Text("Login")
                             .modifier(RoundedColorButton(color: Color(.green)))

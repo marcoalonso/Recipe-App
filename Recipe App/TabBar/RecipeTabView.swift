@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RecipeTabView: View {
     @State private var selectedTab = 0
-    @State private var showCreateThreadView = false
+    @State private var showScanView = false
     
     var body: some View {
         TabView(selection: $selectedTab,
@@ -23,7 +23,7 @@ struct RecipeTabView: View {
                 .onAppear { selectedTab = 0 }
                 .tag(0)
             
-            Text("Upload")
+            UploadView(selectedTab: $selectedTab)
                 .tabItem {
                     Image(systemName: selectedTab == 1 ? "pencil.line" : "pencil")
                 }
@@ -52,9 +52,9 @@ struct RecipeTabView: View {
                 .tag(4)
         })
         .onChange(of: selectedTab, perform: { newValue in
-            showCreateThreadView = selectedTab == 2
+            showScanView = selectedTab == 2
         })
-        .sheet(isPresented: $showCreateThreadView, onDismiss: {
+        .sheet(isPresented: $showScanView, onDismiss: {
             selectedTab = 0
         }, content: {
             ScanFoodView()
