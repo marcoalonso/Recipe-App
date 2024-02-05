@@ -46,20 +46,40 @@ struct RegistrationView: View {
             
             VStack(spacing: 20.0) {
                 HStack {
-                    Image(systemName: "lock")
+                    Image(systemName: "person")
                         .fontWeight(.semibold)
                     
-                    TextField("Email", text: $viewModel.email)
+                    TextField("Fullname ", text: $viewModel.fullname)
                         .font(.subheadline)
                         .padding(12)
                         .cornerRadius(12)
+                   
+                }
+                .modifier(TextViewModifier())
+                
+                HStack {
+                    Image(systemName: "person.fill.checkmark")
+                        .fontWeight(.semibold)
                     
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "eye")
-                            .foregroundColor(.gray)
-                    })
+                    TextField("Username ", text: $viewModel.username)
+                        .autocapitalization(.none)
+                        .font(.subheadline)
+                        .padding(12)
+                        .cornerRadius(12)
+                   
+                }
+                .modifier(TextViewModifier())
+                
+                HStack {
+                    Image(systemName: "envelope")
+                        .fontWeight(.semibold)
+                    
+                    TextField("Email", text: $viewModel.email)
+                        .autocapitalization(.none)
+                        .font(.subheadline)
+                        .padding(12)
+                        .cornerRadius(12)
+                   
                 }
                 .modifier(TextViewModifier())
                     

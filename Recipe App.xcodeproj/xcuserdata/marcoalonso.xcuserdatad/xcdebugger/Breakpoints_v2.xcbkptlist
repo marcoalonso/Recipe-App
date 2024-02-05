@@ -3,4 +3,134 @@
    uuid = "4971F620-1353-445D-8F83-660093E43B4E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0FA2965-8476-451D-8F29-57BDFA255D66"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recipe App/Services/ImageUploader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ImageUploader"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E47D53C7-8E32-403D-B2B0-D2ADA1CEFBBC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recipe App/Services/ImageUploader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "ImageUploader"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87164006-6D81-4823-A479-588814870627"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recipe App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "uploadRecipe(recipe:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "87164006-6D81-4823-A479-588814870627 - a9b4eb1e53b5b97a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Recipe_App.UploadRecipeViewModel.uploadRecipe(recipe: Recipe_App.RecipeModel) async throws -&gt; ()"
+                  moduleName = "Recipe App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SwiftUI%202024/Recipe%20App/Recipe%20App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "460">
+               </Location>
+               <Location
+                  uuid = "87164006-6D81-4823-A479-588814870627 - a9b4eb1e53b5b886"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Recipe_App.UploadRecipeViewModel.uploadRecipe(recipe: Recipe_App.RecipeModel) async throws -&gt; ()"
+                  moduleName = "Recipe App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SwiftUI%202024/Recipe%20App/Recipe%20App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9982C8A-B7C3-47B5-AE7B-36A95825E121"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Recipe App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "uploadRecipe(recipe:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9982C8A-B7C3-47B5-AE7B-36A95825E121 - a9b4eb1e53b5b8d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Recipe_App.UploadRecipeViewModel.uploadRecipe(recipe: Recipe_App.RecipeModel) async throws -&gt; ()"
+                  moduleName = "Recipe App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SwiftUI%202024/Recipe%20App/Recipe%20App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "C9982C8A-B7C3-47B5-AE7B-36A95825E121 - a9b4eb1e53b5b865"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Recipe_App.UploadRecipeViewModel.uploadRecipe(recipe: Recipe_App.RecipeModel) async throws -&gt; ()"
+                  moduleName = "Recipe App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SwiftUI%202024/Recipe%20App/Recipe%20App/Core/Upload/ViewModel/UploadRecipeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "432">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

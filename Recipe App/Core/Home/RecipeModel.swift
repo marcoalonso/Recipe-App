@@ -6,15 +6,26 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestoreSwift
 
-struct RecipeModel {
+struct RecipeModel: Identifiable, Codable {
+    @DocumentID var recipeId: String?
+    
     let owner: String
-    let dishPicture: String
-    let ownerPicture: String
-    let isFavourite: Bool
-    let dishName: String
+    let coverPictureUrl: String?
+    let stepsPictureUrl: String?
+    let foodName: String
     let descriptionPreparation: String
+    let ingredients: [String]
     let minutesPreparation: Int
+    let steps: String
+    
+    var id: String {
+        return recipeId ?? NSUUID().uuidString
+    }
+    
+    var user: User?
 }
 
 

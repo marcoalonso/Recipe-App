@@ -18,8 +18,8 @@ enum CategoryFood: String, CaseIterable {
 struct HomeView: View {
     @State private var recipeToSearch = ""
     @State private var selectedCategory: CategoryFood = .All
+    @StateObject var viewModel = HomeViewModel()
     
-    let data = (1...20).map { "Item \($0)" }
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
@@ -64,7 +64,7 @@ struct HomeView: View {
                     // Grid Posts
                     ScrollView {
                         LazyVGrid(columns: gridItemLayout) {
-                            ForEach(MockData.recipes, id: \.dishName) { item in
+                            ForEach(viewModel.recipes) { item in
                                 RecipeCellView(recipe: item)
                                     
                             }

@@ -10,12 +10,17 @@ import SwiftUI
 struct ProfileView: View {
     @State private var selectedFilter: ProfileFilter = .recipes
     @Namespace var animation
+    @StateObject var viewModel = ProfileViewModel()
     
     var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
     
     private var filterBarWidth : CGFloat {
         let count = CGFloat(ProfileFilter.allCases.count)
         return UIScreen.main.bounds.width / count - 16
+    }
+    
+    private var currentUser: User? {
+        return viewModel.currentUser
     }
     
     var body: some View {
@@ -29,7 +34,7 @@ struct ProfileView: View {
                             .frame(width: 120, height: 120)
                             .clipShape(Circle())
                         
-                        Text("Marco")
+                        Text(currentUser?.fullname ?? "")
                             .font(.title2)
                             .bold()
                             .foregroundColor(.kSecondaryText)

@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct UploadView: View {
-    @State private var foodName = ""
-    @State private var descriptionFood = ""
-    @State private var timePreparation = 0.0
-    
-    @State private var showingImagePicker = false
-    @State private var selectedImage: UIImage?
-    
+    @StateObject var viewModel = UploadRecipeViewModel()
     @Binding var selectedTab: Int
     
     var body: some View {
@@ -22,45 +17,41 @@ struct UploadView: View {
             ScrollView {
                 VStack(alignment: .center, spacing: 24.0) {
                     
-                    if let image = selectedImage {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 200)
-                            .cornerRadius(15)
-                            .onTapGesture {
-                                self.showingImagePicker = true
-                            }
-                    } else {
-                        ZStack {
-                            
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
-                                .foregroundColor(.gray)
+                    PhotosPicker(selection: $viewModel.coverPhoto) {
+                        if let image = viewModel.recipeCoverImage {
+                            image
+                                .resizable()
+                                .scaledToFill()
                                 .frame(height: 200)
+                                .cornerRadius(15)
                             
-                            VStack(spacing: 16.0) {
-                                Image(systemName: "photo.fill")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
+                        } else {
+                            ZStack {
+                                
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                                     .foregroundColor(.gray)
+                                    .frame(height: 200)
+                                
+                                VStack(spacing: 16.0) {
+                                    Image(systemName: "photo.fill")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(.gray)
                                     
-                                
-                                Text("Add Cover Photo")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.black)
-                                
-                                Text("(up to 12 Mb")
-                                    .font(.caption2)
-                                    .foregroundColor(.gray)
+                                    
+                                    Text("Add Cover Photo")
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.black)
+                                    
+                                    Text("(up to 12 Mb")
+                                        .font(.caption2)
+                                        .foregroundColor(.gray)
+                                }
                             }
-                        }
-                        .onTapGesture {
-                            self.showingImagePicker = true
                         }
                     }
-                    
                     
                     
                     VStack(alignment: .leading) {
@@ -70,7 +61,7 @@ struct UploadView: View {
                             .foregroundColor(.black)
                             .padding(.leading, 24)
                         
-                        TextField("Enter Food Name", text: $foodName)
+                        TextField("Enter Food Name", text: $viewModel.foodName)
                             .frame(height: 48)
                             .modifier(TextViewModifier())
                     }
@@ -82,8 +73,8 @@ struct UploadView: View {
                             .foregroundColor(.black)
                             .padding(.leading, 24)
                         
-                        TextField("Tell a little bit about your food", text: $descriptionFood, axis: .vertical)
-                            .frame(height: 148) 
+                        TextField("Tell a little bit about your food", text: $viewModel.descriptionFood, axis: .vertical)
+                            .frame(height: 148)
                             
                             .overlay(
                                 RoundedRectangle(cornerRadius: 12)
@@ -121,7 +112,7 @@ struct UploadView: View {
                         .foregroundColor(.green)
                         
                         
-                        Slider(value: $timePreparation, in: 10...70, step: 30.0)
+                        Slider(value: $viewModel.timePreparation, in: 10...70, step: 30.0)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .accentColor(.green)
@@ -130,16 +121,13 @@ struct UploadView: View {
                     
                     
                     NavigationLink {
-                        UploadView2(selectedTab: $selectedTab)
+                        UploadView2(viewModel: viewModel, selectedTab: $selectedTab)
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Next")
                             .modifier(RoundedColorButton(color: .green))
                     }
 
-                }
-                .sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(selectedImage: self.$selectedImage, sourceType: .photoLibrary)
                 }
             .padding()
             }

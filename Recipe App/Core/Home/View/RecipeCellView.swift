@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct RecipeCellView: View {
     let recipe : RecipeModel
@@ -13,23 +14,19 @@ struct RecipeCellView: View {
     var body: some View {
         VStack {
             HStack {
-                AsyncImage(url: URL(string: recipe.ownerPicture)) { image in
-                    image
+                //KFImage(URL(string: recipe.ownerProfileUrl))
+                KFImage(URL(string: recipe.stepsPictureUrl ?? MockData.imagePlaceholder))
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 30, height: 30)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .scaledToFill()
+                        .frame(width: 30, height: 30)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                 
                 Text(recipe.owner)
                     .font(.callout)
                     .foregroundColor(Color(.kSecondaryText))
             }
             
-            AsyncImage(url: URL(string: recipe.dishPicture)) { image in
+            AsyncImage(url: URL(string: recipe.coverPictureUrl ?? MockData.imagePlaceholder)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -49,7 +46,7 @@ struct RecipeCellView: View {
                     .padding(.horizontal, -50)
             }
             
-            Text(recipe.dishName)
+            Text(recipe.foodName)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(Color(.kSecondaryText))
